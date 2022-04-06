@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>SIGNAL LIGHT TIME CHECK</title>
+</head>
+<body>
+    
+    <div id=0>0</div>
+    <div id=1>1</div>
+    <div id=2>2</div>
+    <div id=3>3</div>
+    <div id=4>4</div>
+    <div id=5>5</div>
+    <div id=6>6</div>
+    <div id=7>7</div>
+    <div id=8>8</div>
+    <div id=9>9</div>
+
+    <script type="text/javascript">
+        let timer = setInterval(() => incressTime(), 10);
+        var greenState = "Green";
+        var redState = "Red";
+        let time = 10;
+
+        function incressTime()
+        {
+            time += 10
+            signal_0(time, 42.29, 119.45, 0);
+            signal_0(time, 26.01, 53.95, 1);
+            signal_0(time, 26.01, 53.95, 2);
+            signal_0(time, 26.01, 53.95, 3);
+            signal_0(time, 26.01, 53.95, 4);
+            signal_0(time, 24.06, 54.85, 5);
+            signal_0(time, 25.06, 102.73, 6);
+            signal_0(time, 24.56, 45.4, 7);
+            signal_0(time, 31.06, 38.87, 8);
+            signal_0(time, 31.04, 38.96, 9);
+        }
+
+        function signal_0(time, on_ts, off_ts, id) 
+        {
+            // 60s = 1000s
+            // 0.1 = 100
+            // 0.01s = 10
+            let result_On_ts = (on_ts / 0.01) * 10;
+            let result_off_ts = (off_ts / 0.01) * 10;
+            
+            document.getElementById(id).innerHTML = 0+":"+greenState+":"+time+",";
+
+            if(time <= result_off_ts ) //1분 59.45초
+            { 
+                if(time <= result_On_ts) //42.29초
+                {
+                    document.getElementById(id).innerHTML = 0+":"+greenState+":"+time+",";
+                }
+                else if(time > result_On_ts && time < result_off_ts) //1분 17.16초
+                {
+                    document.getElementById(id).innerHTML = 0+":"+redState+":"+time+",";
+                }
+                else if(time == result_off_ts)
+                {
+                    time = 10;
+                }
+            }
+        }
+    </script>
+</body>
+</html>
