@@ -14,7 +14,7 @@
 
 ## App design
 <div>
-<img src="https://user-images.githubusercontent.com/65146431/162872493-b3b800e3-0e23-429f-98ea-44b5412073b9.jpeg"/>
+<img width = "461" src="https://user-images.githubusercontent.com/65146431/162872493-b3b800e3-0e23-429f-98ea-44b5412073b9.jpeg"/>
 <img src="https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svge"/>
 <img src="https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svg"/>
 </div>
