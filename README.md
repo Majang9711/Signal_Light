@@ -14,7 +14,7 @@
 
 ## App design
 <div>
-<img src="https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svg"/>
+<img src="https://github.com/Majang9711/Signal_Light/issues/1#issue-1200924500"/>
 <img src="https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svge"/>
 <img src="https://www.gstatic.com/mobilesdk/160323_mobilesdk/images/firebase_logotype_white_18dp.svg"/>
 </div>
