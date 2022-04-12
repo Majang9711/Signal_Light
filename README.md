@@ -8,5 +8,9 @@
 - 황인우 (inukorea@gmail.com)
 - 강민규 (systempo@naver.com)
 
-### Read More
-- 
+### Function
+- 신호등의 위치 알리기
+- 신호등의 신호 현황 알리미 이용한 시간 단축
+
+## App design
+
