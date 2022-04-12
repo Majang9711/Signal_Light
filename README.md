@@ -14,7 +14,7 @@
 
 ## App design
 <div>
-<img width = "461" height = "800" src="https://user-images.githubusercontent.com/65146431/162872493-b3b800e3-0e23-429f-98ea-44b5412073b9.jpeg"/>
-<img width = "461" height = "800" src="https://user-images.githubusercontent.com/65146431/162872516-6a176c96-67b2-4e57-ad77-13f8fd1e26a1.jpeg"/>
-<img width = "461" height = "800" src="https://user-images.githubusercontent.com/65146431/162872522-0cb0b76c-f435-4fb0-b01a-2f365f006eaf.jpeg"/>
+<img width = "262" height = "400" src="https://user-images.githubusercontent.com/65146431/162872493-b3b800e3-0e23-429f-98ea-44b5412073b9.jpeg"/>
+<img width = "261" height = "400" src="https://user-images.githubusercontent.com/65146431/162872516-6a176c96-67b2-4e57-ad77-13f8fd1e26a1.jpeg"/>
+<img width = "261" height = "400" src="https://user-images.githubusercontent.com/65146431/162872522-0cb0b76c-f435-4fb0-b01a-2f365f006eaf.jpeg"/>
 </div>
