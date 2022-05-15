@@ -85,13 +85,14 @@
 
             document.getElementById(id).innerHTML = id + ":" + greenState + ":" + time[id] + ",";
             const db = getDatabase();
+            let nowTimes = (time[id] * 0.01) / 10;
             set(ref(db, 'users/' + id), {
                 on: on_ts,
                 off: off_ts,
                 total: on_ts + off_ts,
                 id: id,
                 state: greenState,
-                nowTime: time[id],
+                nowTime: nowTimes,
             });
 
 
@@ -100,25 +101,27 @@
                 if (time[id] <= result_On_ts) //42.29초
                 {
                     document.getElementById(id).innerHTML = id + ":" + greenState + ":" + time[id] + ",";
+                    let nowTimes = (time[id] * 0.01) / 10;
                     set(ref(db, 'users/' + id), {
                         on: on_ts,
                         off: off_ts,
                         total: on_ts + off_ts,
                         id: id,
                         state: greenState,
-                        nowTime: time[id],
+                        nowTime: nowTimes,
                     });
                 }
                 else if (time[id] > result_On_ts && time[id] < result_off_ts) //1분 17.16초
                 {
                     document.getElementById(id).innerHTML = id + ":" + redState + ":" + time[id] + ",";
+                    let nowTimes = (time[id] * 0.01) / 10;
                     set(ref(db, 'users/' + id), {
                         on: on_ts,
                         off: off_ts,
                         total: on_ts + off_ts,
                         id: id,
                         state: redState,
-                        nowTime: time[id],
+                        nowTime: nowTimes,
                     });
                 }
                 else if (time[id] == result_off_ts) {
