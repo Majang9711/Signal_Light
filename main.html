@@ -74,7 +74,7 @@
             signal_0(24.06, 54.85, 5);
             signal_0(25.06, 102.73, 6);
             signal_0(24.56, 45.4, 7);
-            signal_0(31.06, 38.96, 8);//38.87
+            signal_0(31.06, 38.87, 8);
             signal_0(31.04, 38.96, 9);
         }
 
@@ -86,6 +86,8 @@
             document.getElementById(id).innerHTML = id + ":" + greenState + ":" + time[id] + ",";
             const db = getDatabase();
             let nowTimes = (time[id] * 0.01) / 10;
+            let total = result_On_ts + result_off_ts; //전체 시간
+
             set(ref(db, 'users/' + id), {
                 on: on_ts,
                 off: off_ts,
@@ -96,7 +98,7 @@
             });
 
 
-            if (time[id] <= result_off_ts) //1분 59.45초
+            if (time[id] <= total) //1분 59.45초
             {
                 if (time[id] <= result_On_ts) //42.29초
                 {
@@ -116,13 +118,13 @@
                     set(ref(db, 'users/' + id), {
                         on: on_ts,
                         off: off_ts,
-                        total: on_ts + off_ts,
+                        total: total,
                         id: id,
                         state: redState,
                         nowTime: nowTimes,
                     });
                 }
-                if (time[id] == result_off_ts) {
+                if (time[id] == total) {
                     time[id] = 10;
                 }
             }
