@@ -3,11 +3,9 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SIGNAL LIGHT TIME CHECK 3</title>
+    <title>SIGNAL LIGHT TIME CHECK</title>
 </head>
-
 <body>
-
     <div id=0>0</div>
     <div id=1>1</div>
     <div id=2>2</div>
@@ -49,32 +47,153 @@
         const app = initializeApp(firebaseConfig);
         const analytics = getAnalytics(app);
 
-        let timer = setInterval(() => incressTime(), 10);
+        let timer = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         var greenState = "Green";
         var redState = "Red";
         var time = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+        
+        let today = new Date();
+        let y = today.getFullYear();
+        let month = today.getMonth()+1; //현재시간중 달은 0부터 시작이라서 +1
+        if((month+"").length < 2){
+            month="0"+month;   //달의 숫자가 1자리면 앞에 0을 붙임.
+        }
+        let d = today.getDate();
+        if((d+"").d < 2){
+            d="0"+d;   
+        }
+        let h = today.getHours(); //now h
+        if((h+"").h < 2){
+            h="0"+h;   
+        }
+        let m = today.getMinutes(); //now m
+        if((m+"").m < 2){
+            m="0"+m;   
+        }
+        let s = today.getSeconds(); //now s
+        if((s+"").s < 2){
+            s="0"+s;   
+        }
 
-        function incressTime() {
+        let nowYHMS = y + "" + month + "" + d + "" + h + "" + m + "" + s;
+                
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172200) // 172200
+        {
+            timer[0] = setInterval(() => incressTime_0(), 10);
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172530){ //172530
+            timer[1] = setInterval(() => incressTime_1(), 10);
+            timer[2] = setInterval(() => incressTime_2(), 10);
+            timer[3] = setInterval(() => incressTime_3(), 10);
+            timer[4] = setInterval(() => incressTime_4(), 10);
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172920){ // 172920
+            timer[5] = setInterval(() => incressTime_5(), 10);
+
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 175151){ // 175151
+            timer[6] = setInterval(() => incressTime_6(), 10);
+
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 175809){ // 175809
+
+            timer[7] = setInterval(() => incressTime_7(), 10);
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 170314){ // 170314
+            timer[8] = setInterval(() => incressTime_8(), 10);
+
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 170644){ // 170644
+            timer[9] = setInterval(() => incressTime_9(), 10);
+        }
+
+        // if(h >= 5 && m >= 50 && s >= 00)
+        // {
+        //     timer[0] = setInterval(() => incressTime_0(), 10);
+        // }
+        // if(h >= 9 && m >= 51 && s >= 30){
+        //     timer[1] = setInterval(() => incressTime_1(), 10);
+        //     timer[2] = setInterval(() => incressTime_2(), 10);
+        //     timer[3] = setInterval(() => incressTime_3(), 10);
+        //     timer[4] = setInterval(() => incressTime_4(), 10);
+        // }
+        // if(h >= 9 && m >= 51 && s >= 40){
+        //     timer[5] = setInterval(() => incressTime_5(), 10);
+
+        // }
+        // if(h >= 9 && m >= 51 && s >= 50){
+        //     timer[6] = setInterval(() => incressTime_6(), 10);
+
+        // }
+        // if(h >= 9 && m >= 52 && s >= 0){
+
+        //     timer[7] = setInterval(() => incressTime_7(), 10);
+        // }
+        // if(h >= 9 && m >= 52 && s >= 56){
+        //     timer[8] = setInterval(() => incressTime_8(), 10);
+
+        // }
+        // if(h >= 9 && m >= 53 && s >= 00){
+        //     timer[9] = setInterval(() => incressTime_9(), 10);
+        // }
+
+        function incressTime_0() {
             time[0] += 10;
-            time[1] += 10;
-            time[2] += 10;
-            time[3] += 10;
-            time[4] += 10;
-            time[5] += 10;
-            time[6] += 10;
-            time[7] += 10;
-            time[8] += 10;
-            time[9] += 10;
+            // time[1] += 10;
+            // time[2] += 10;
+            // time[3] += 10;
+            // time[4] += 10;
+            // time[5] += 10;
+            // time[6] += 10;
+            // time[7] += 10;
+            // time[8] += 10;
+            // time[9] += 10;
 
             signal_0(42.29, 119.45, 0);
+            // signal_0(26.01, 53.95, 1);
+            // signal_0(26.01, 53.95, 2);
+            // signal_0(26.01, 53.95, 3);
+            // signal_0(26.01, 53.95, 4);
+            // signal_0(24.06, 54.85, 5);
+            // signal_0(25.06, 102.73, 6);
+            // signal_0(24.56, 45.4, 7);
+            // signal_0(31.06, 38.87, 8);
+            // signal_0(31.04, 38.96, 9);
+        }
+        function incressTime_1() {
+            time[1] += 10;
             signal_0(26.01, 53.95, 1);
+        }
+        function incressTime_2() {
+            time[2] += 10;
             signal_0(26.01, 53.95, 2);
+        }
+        function incressTime_3() {
+            time[3] += 10;
             signal_0(26.01, 53.95, 3);
+        }
+        function incressTime_4() {
+            time[4] += 10;
             signal_0(26.01, 53.95, 4);
+        }
+        function incressTime_5() {
+            time[5] += 10;
             signal_0(24.06, 54.85, 5);
+        }
+        function incressTime_6() {
+            time[6] += 10;
             signal_0(25.06, 102.73, 6);
+        }
+        function incressTime_7() {
+            time[7] += 10;
             signal_0(24.56, 45.4, 7);
+        }
+        function incressTime_8() {
+            time[8] += 10;
             signal_0(31.06, 38.87, 8);
+        }
+        function incressTime_9() {
+            time[9] += 10;
             signal_0(31.04, 38.96, 9);
         }
 
