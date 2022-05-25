@@ -52,6 +52,9 @@
         var redState = "Red";
         var time = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         
+        var isTrue =  new Array(false, false, false, false, false, false, false, false, false, false); // true이면 카운트 실행, false이면 카운트 실행
+        var isMainTrue = new Array(false, false, false, false, false, false, false, false, false, false); //true로 바꾸는 것을 제어하는
+        
         let today = new Date();
         let y = today.getFullYear();
         let month = today.getMonth()+1; //현재시간중 달은 0부터 시작이라서 +1
@@ -76,37 +79,78 @@
         }
 
         let nowYHMS = y + "" + month + "" + d + "" + h + "" + m + "" + s;
-                
+        
+        // if(isMainTrue[0] == false || isMainTrue[1] == false || isMainTrue[3] == false || isMainTrue[4] == false || isMainTrue[5] == false || isMainTrue[6] == false || isMainTrue[7] == false || isMainTrue[8] == false)
+
         if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172200) // 172200
+        {
+            isTrue[0] = true;
+            isMainTrue[0] = true;
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172530){ //172530
+            isTrue[1] = true;
+            isTrue[2] = true;
+            isTrue[3] = true;
+            isTrue[4] = true;
+            isMainTrue[1] = true;
+            isMainTrue[2] = true;
+            isMainTrue[3] = true;
+            isMainTrue[4] = true;
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172920){ // 172920
+            isTrue[5] = true;
+            isMainTrue[5] = true;
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 175151){ // 175151
+            isTrue[6] = true;
+            isMainTrue[6] = true;
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 175809){ // 175809
+            isTrue[7] = true;
+            isMainTrue[7] = true;
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 170314){ // 170314
+            isTrue[8] = true;
+            isMainTrue[8] = true;
+        }
+        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 170644){ // 170644
+            isTrue[9] = true;
+            isMainTrue[9] = true;
+        }
+
+
+        //증가
+        if(isTrue[0] == true)
         {
             timer[0] = setInterval(() => incressTime_0(), 10);
         }
-        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172530){ //172530
+        if(isTrue[1] == true)
+        {
             timer[1] = setInterval(() => incressTime_1(), 10);
             timer[2] = setInterval(() => incressTime_2(), 10);
             timer[3] = setInterval(() => incressTime_3(), 10);
             timer[4] = setInterval(() => incressTime_4(), 10);
         }
-        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 172920){ // 172920
+        if(isTrue[5] == true)
+        {
             timer[5] = setInterval(() => incressTime_5(), 10);
-
         }
-        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 175151){ // 175151
+        if(isTrue[6] == true)
+        {
             timer[6] = setInterval(() => incressTime_6(), 10);
-
         }
-        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 175809){ // 175809
-
+        if(isTrue[7] == true)
+        {
             timer[7] = setInterval(() => incressTime_7(), 10);
         }
-        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 170314){ // 170314
+        if(isTrue[8] == true)
+        {
             timer[8] = setInterval(() => incressTime_8(), 10);
-
         }
-        if(eval(nowYHMS) >= y + "" + month + "" + d + "" + 170644){ // 170644
+        if(isTrue[9] == true)
+        {
             timer[9] = setInterval(() => incressTime_9(), 10);
         }
-
         // if(h >= 5 && m >= 50 && s >= 00)
         // {
         //     timer[0] = setInterval(() => incressTime_0(), 10);
