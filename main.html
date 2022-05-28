@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SIGNAL LIGHT TIME CHECK 9</title>
+    <title>SIGNAL LIGHT TIME CHECK 10</title>
 </head>
 
 <body>
@@ -90,21 +90,28 @@
                 incressTime_0();
             }
 
-            if (eval(nowYHMS) == y + "" + month + "" + d + "" + "172530") { //172530
-                time[1] = 0;
-                time[2] = 0;
-                time[3] = 0;
-                time[4] = 0;
-            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + "172530") { //172530
+            if (eval(nowYHMS) == y + "" + month + "" + d + "" + "000036") { //000036
+                time[1] = 28000;
+                time[2] = 28000;
+                time[3] = 28000;
+                time[4] = 28000;
+            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + "000036") { //000036
+                incressTime_1();
+                incressTime_2();
+                incressTime_3();
+                incressTime_4();
+            } else {
                 incressTime_1();
                 incressTime_2();
                 incressTime_3();
                 incressTime_4();
             }
 
-            if (eval(nowYHMS) == y + "" + month + "" + d + "" + "172920") { // 172920 
-                time[5] = 0;
-            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + "172920") { // 172920 
+            if (eval(nowYHMS) == y + "" + month + "" + d + "" + "000030") { // 000030 
+                time[5] = 28000;
+            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + "000030") { // 000030 
+                incressTime_5();
+            } else {
                 incressTime_5();
             }
 
@@ -156,7 +163,7 @@
         }
         function incressTime_5() {
             time[5] += 1000;
-            signal_0(24.0, 55.0, 5);
+            signal_0(25.0, 55.0, 5);
         }
         function incressTime_6() {
             time[6] += 1000;
@@ -184,15 +191,6 @@
             const db = getDatabase();
             let nowTimes = (time[id] * 0.01) / 10;
             let total = result_On_ts + result_off_ts; //전체 시간
-
-            // set(ref(db, 'users/' + id), {
-            //     on: on_ts,
-            //     off: off_ts,
-            //     total: on_ts + off_ts,
-            //     id: id,
-            //     state: greenState,
-            //     nowTime: nowTimes,
-            // });
 
 
             if (time[id] <= total) //1분 59.45초
