@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SIGNAL LIGHT TIME CHECK 55</title>
+    <title>SIGNAL LIGHT TIME CHECK 44</title>
 </head>
 
 <body>
@@ -53,7 +53,7 @@
         var redState = "Red";
         var time = new Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 
-        timer = setInterval(() => main_main(), 10);
+        timer = setInterval(() => main_main(), 1000);
 
         function main_main() {
             let today = new Date();
@@ -135,44 +135,44 @@
         }
 
         function incressTime_0() {
-            time[0] += 10;
-            signal_0(42.29, 119.45, 0);
+            time[0] += 1000;
+            signal_0(42.0, 120.0, 0);
         }
         function incressTime_1() {
-            time[1] += 10;
-            signal_0(26.01, 53.95, 1);
+            time[1] += 1000;
+            signal_0(26.0, 54.0, 1);
         }
         function incressTime_2() {
-            time[2] += 10;
-            signal_0(26.01, 53.95, 2);
+            time[2] += 1000;
+            signal_0(26.0, 54.0, 2);
         }
         function incressTime_3() {
-            time[3] += 10;
-            signal_0(26.01, 53.95, 3);
+            time[3] += 1000;
+            signal_0(26.0, 54.0, 3);
         }
         function incressTime_4() {
-            time[4] += 10;
-            signal_0(26.01, 53.95, 4);
+            time[4] += 1000;
+            signal_0(26.0, 54.0, 4);
         }
         function incressTime_5() {
-            time[5] += 10;
-            signal_0(24.06, 54.85, 5);
+            time[5] += 1000;
+            signal_0(24.0, 55.0, 5);
         }
         function incressTime_6() {
-            time[6] += 10;
-            signal_0(25.06, 102.73, 6);
+            time[6] += 1000;
+            signal_0(25.0, 103.0, 6);
         }
         function incressTime_7() {
-            time[7] += 10;
-            signal_0(24.56, 45.4, 7);
+            time[7] += 1000;
+            signal_0(25.0, 45.0, 7);
         }
         function incressTime_8() {
-            time[8] += 10;
-            signal_0(31.06, 38.87, 8);
+            time[8] += 1000;
+            signal_0(31.0, 39.0, 8);
         }
         function incressTime_9() {
-            time[9] += 10;
-            signal_0(31.04, 38.96, 9);
+            time[9] += 1000;
+            signal_0(31.0, 39.0, 9);
         }
 
         function signal_0(on_ts, off_ts, id) {
@@ -222,7 +222,7 @@
                     });
                 }
             } else {
-                time[id] = 10;
+                time[id] = 0;
             }
         }
 
