@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SIGNAL LIGHT TIME CHECK 44</title>
+    <title>SIGNAL LIGHT TIME CHECK 55</title>
 </head>
 
 <body>
@@ -185,14 +185,14 @@
             let nowTimes = (time[id] * 0.01) / 10;
             let total = result_On_ts + result_off_ts; //전체 시간
 
-            set(ref(db, 'users/' + id), {
-                on: on_ts,
-                off: off_ts,
-                total: on_ts + off_ts,
-                id: id,
-                state: greenState,
-                nowTime: nowTimes,
-            });
+            // set(ref(db, 'users/' + id), {
+            //     on: on_ts,
+            //     off: off_ts,
+            //     total: on_ts + off_ts,
+            //     id: id,
+            //     state: greenState,
+            //     nowTime: nowTimes,
+            // });
 
 
             if (time[id] <= total) //1분 59.45초
