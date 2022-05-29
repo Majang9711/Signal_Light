@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>SIGNAL LIGHT TIME CHECK 130</title>
+    <title>SIGNAL LIGHT TIME CHECK 600</title>
 </head>
 
 <body>
@@ -57,8 +57,8 @@
 
         timer = setInterval(() => main_main(), 1000);
 
-        
-        let hh = 0, mm = 0, ss = 36;
+
+        let hh = 1, mm = 40, ss = 16;
         var oldhh = hh, oldmm = mm, oldss = ss;
         function main_main() {
             let today = new Date();
@@ -84,16 +84,22 @@
                 s = "0" + s;
             }
 
-            
+            if ((hh + "").length < 2) {
+                hh = "0" + hh;
+            }
+            if ((mm + "").length < 2) {
+                mm = "0" + mm;
+            }
+            if ((ss + "").length < 2) {
+                ss = "0" + ss;
+            }
+
 
             let nowYHMS = y + "" + month + "" + d + "" + h + "" + m + "" + s;
 
 
-            document.getElementById(10).innerHTML = 10 + ":" +Math.floor(hh) + ":" + Math.floor(mm) + ":" + Math.floor(ss);
-
-
+            document.getElementById(10).innerHTML = 10 + ":" + hh + ":" + mm + ":" + ss;
             
-
             if (eval(nowYHMS) == y + "" + month + "" + d + "" + "172200") // 172200
             {
                 time[0] = 0;
@@ -102,7 +108,7 @@
                 incressTime_0();
             }
 
-            if (eval(nowYHMS) == y + "" + month + "" + d + "" + Math.floor(hh) + "" + Math.floor(mm) + "" + Math.floor(ss)) { //000036  hh + "" + mm + "" + ss
+            if (eval(nowYHMS) == y + "" + month + "" + d + "" + hh + "" + mm + "" +ss) { //000036  hh + "" + mm + "" + ss
                 time[1] = 28000;
                 time[2] = 28000;
                 time[3] = 28000;
@@ -132,12 +138,11 @@
                     ss = "0" + ss;
                 }
 
-                
-                document.getElementById(11).innerHTML = 11 + ":" +oldhh + ":" + oldmm + ":" + oldss;
+                document.getElementById(11).innerHTML = 11 + ":" + oldhh + ":" + oldmm + ":" + oldss;
 
 
 
-            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + oldhh + "" + oldmm + "" + oldss ) { //000036
+            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + oldhh + "" + oldmm + "" + oldss) { //000036
                 incressTime_1();
                 incressTime_2();
                 incressTime_3();
