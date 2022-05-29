@@ -55,6 +55,9 @@
 
         timer = setInterval(() => main_main(), 1000);
 
+        
+        let hh = 16, mm = 32, ss = 36;
+        var oldhh = hh, oldmm = mm, oldss = ss;
         function main_main() {
             let today = new Date();
             let y = today.getFullYear();
@@ -79,8 +82,15 @@
                 s = "0" + s;
             }
 
+            
+
             let nowYHMS = y + "" + month + "" + d + "" + h + "" + m + "" + s;
 
+
+            document.getElementById(7).innerHTML = 7 + ":" +Math.floor(hh) + ":" + Math.floor(mm) + ":" + Math.floor(ss);
+
+
+            
 
             if (eval(nowYHMS) == y + "" + month + "" + d + "" + "172200") // 172200
             {
@@ -90,21 +100,51 @@
                 incressTime_0();
             }
 
-            if (eval(nowYHMS) == y + "" + month + "" + d + "" + "000036") { //000036
+            if (eval(nowYHMS) == y + "" + month + "" + d + "" + Math.floor(hh) + "" + Math.floor(mm) + "" + Math.floor(ss)) { //000036  hh + "" + mm + "" + ss
                 time[1] = 28000;
                 time[2] = 28000;
                 time[3] = 28000;
                 time[4] = 28000;
-            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + "000036") { //000036
+                oldhh = hh;
+                oldmm = mm;
+                oldss = ss;
+                let total_ss = ss + 80;
+                if (total_ss % 60 != 0) {
+                    ss = total_ss % 60;
+                    mm = mm + (total_ss / 60);
+                    if (mm >= 60) {
+                        mm = mm % 60;
+                        hh = hh + (mm / 60);
+                    }
+                }
+                hh = Math.floor(hh);
+                mm = Math.floor(mm);
+                ss = Math.floor(ss);
+                if ((hh + "").length < 2) {
+                    hh = "0" + hh;
+                }
+                if ((mm + "").length < 2) {
+                    mm = "0" + mm;
+                }
+                if ((ss + "").length < 2) {
+                    ss = "0" + ss;
+                }
+
+                
+                document.getElementById(8).innerHTML = 8 + ":" +oldhh + ":" + oldmm + ":" + oldss;
+
+
+
+            } else if (eval(nowYHMS) > y + "" + month + "" + d + "" + oldhh + "" + oldmm + "" + oldss ) { //000036
                 incressTime_1();
                 incressTime_2();
                 incressTime_3();
                 incressTime_4();
             } else {
-                incressTime_1();
-                incressTime_2();
-                incressTime_3();
-                incressTime_4();
+                // incressTime_1();
+                // incressTime_2();
+                // incressTime_3();
+                // incressTime_4();
             }
 
             if (eval(nowYHMS) == y + "" + month + "" + d + "" + "000030") { // 000030 
