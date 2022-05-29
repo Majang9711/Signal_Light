@@ -17,6 +17,8 @@
     <div id=7>7</div>
     <div id=8>8</div>
     <div id=9>9</div>
+    <div id=10>10</div>
+    <div id=11>11</div>
 
     <script type="text/javascript">
 
@@ -56,7 +58,7 @@
         timer = setInterval(() => main_main(), 1000);
 
         
-        let hh = 16, mm = 43, ss = 16;
+        let hh = 0, mm = 0, ss = 36;
         var oldhh = hh, oldmm = mm, oldss = ss;
         function main_main() {
             let today = new Date();
@@ -87,7 +89,7 @@
             let nowYHMS = y + "" + month + "" + d + "" + h + "" + m + "" + s;
 
 
-            document.getElementById(7).innerHTML = 7 + ":" +Math.floor(hh) + ":" + Math.floor(mm) + ":" + Math.floor(ss);
+            document.getElementById(10).innerHTML = 10 + ":" +Math.floor(hh) + ":" + Math.floor(mm) + ":" + Math.floor(ss);
 
 
             
@@ -131,7 +133,7 @@
                 }
 
                 
-                document.getElementById(8).innerHTML = 8 + ":" +oldhh + ":" + oldmm + ":" + oldss;
+                document.getElementById(11).innerHTML = 11 + ":" +oldhh + ":" + oldmm + ":" + oldss;
 
 
 
